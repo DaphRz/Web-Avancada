@@ -1,3 +1,5 @@
+# Ver no Material se tem Solução
+
 import http.server as http_server
 
 class MyWebServer:   # Criando Objeto
@@ -8,3 +10,7 @@ class MyWebServer:   # Criando Objeto
         httpd = http_server.HTTPServer((host, port), self.http_hander)
         print(f"Servidor rodando em {host}:{port}")
         httpd.serve_forever()   
+
+if __name__ == "__main__":
+    server = MyWebServer()
+    server.run()
