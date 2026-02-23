@@ -1,0 +1,59 @@
+PS C:\DevC> py -m venv venv 
+
+PS C:\DevC> py .\uvv1\make_env.py               
+PS C:\DevC> py .\uvv1\make_env.py
+PS C:\DevC> py .\uvv1\make_env.py
+Set-ExecutionPolicy : O Windows PowerShell atualizou sua política de execução com êxito, mas a configuração foi substituída por uma política definida em um escopo mais específico. Devido à substituição, o shell manterá sua 
+política de execução efetiva atual de Bypass. Digite "Get-ExecutionPolicy -List" para exibir suas configurações de política de execução. Para obter mais informações, consulte "Get-Help Set-ExecutionPolicy".
+No C:\DevC\temp_script.ps1:7 caractere:1
+
+PS C:\DevC> .\venv\Scripts\  
+.\venv\Scripts\ : O termo '.\venv\Scripts\' não é reconhecido como nome de cmdlet, função, arquivo de script ou programa operável. Verifique a grafia do nome ou, se um caminho tiver sido incluído, veja se o caminho está 
+correto e tente novamente.
+No linha:1 caractere:1
++ .\venv\Scripts\
++ ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\venv\Scripts\:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+PS C:\DevC> .\venv\\Scripts\Activate.ps1
+(venv) PS C:\DevC> pip install flask
+
+Successfully installed blinker-1.9.0 click-8.3.1 colorama-0.4.6 flask-3.1.3 itsdangerous-2.2.0 jinja2-3.1.6 markupsafe-3.0.3 werkzeug-3.1.6                                                                                      
+(venv) PS C:\DevC> flask --help
+Error: Could not locate a Flask application. Use the 'flask --app' option, 'FLASK_APP' environment variable, or a 'wsgi.py' or 'app.py' file in the current directory.
+
+Usage: flask [OPTIONS] COMMAND [ARGS]...
+
+  A general utility script for Flask applications.
+
+  An application to load must be given with the '--app' option, 'FLASK_APP'
+  environment variable, or with a 'wsgi.py' or 'app.py' file in the current
+  directory.
+
+Options:
+  -e, --env-file FILE   Load environment variables from this file, taking
+                        precedence over those set by '.env' and '.flaskenv'.
+                        Variables set directly in the environment take highest
+                        precedence. python-dotenv must be installed.
+  -A, --app IMPORT      The Flask application or factory function to load, in
+                        the form 'module:name'. Module can be a dotted import
+                        or file path. Name is not required if it is 'app',
+                        'application', 'create_app', or 'make_app', and can be
+                        'name(args)' to pass arguments.
+  --debug / --no-debug  Set debug mode.
+  --version             Show the Flask version.
+  --help                Show this message and exit.
+
+Commands:
+  routes  Show the routes for the app.
+  run     Run a development server.
+  shell   Run a shell in the app context.
+(venv) PS C:\DevC> flask run
+(venv) PS C:\DevC> $env:FLASK_APP="app.py"
+(venv) PS C:\DevC> $env:FLASK_DEBUG="development"
+(venv) PS C:\DevC> $env:FLASK_DEBUG=1
+(venv) PS C:\DevC> $env:FLASK_ENV="development"
+(venv) PS C:\DevC> py .\app.py
+(venv) PS C:\DevC> flask run
